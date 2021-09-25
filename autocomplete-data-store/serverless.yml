@@ -1,0 +1,25 @@
+service: autocomplete-data-store
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  lambdaHashingVersion: 20201221
+
+resources:
+  Resources:
+    CityTable2:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: CityTable
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: country
+            AttributeType: S
+          - AttributeName: city
+            AttributeType: S
+        KeySchema:
+          - AttributeName: country
+            KeyType: HASH
+          - AttributeName: city
+            KeyType: RANGE

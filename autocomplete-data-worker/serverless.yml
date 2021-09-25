@@ -1,0 +1,36 @@
+service: autocomplete-data-worker
+frameworkVersion: '2'
+
+custom:
+  cityTableName: CityTable
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  lambdaHashingVersion: 20201221
+  iam:
+    role:
+      statements:
+        - Effect: 'Allow'
+          Action:
+            - 'dynamodb:BatchWriteItem'
+          Resource: arn:aws:dynamodb:${aws:region}:${aws:accountId}:table/${self:custom.cityTableName}
+
+functions:
+  worker:
+    handler: handler.worker
+    timeout: 60
+    environment:
+      CITY_TABLE_NAME: ${self:custom.cityTableName}
+    events:
+      - sqs:
+          arn: { "Fn::GetAtt": [CityDataQueue, Arn] }
+          batchSize: 10
+          maximumBatchingWindow: 60
+
+resources:
+  Resources:
+    CityDataQueue:
+      Type: AWS::SQS::Queue
+      Properties:
+        QueueName: autocomplete-city-data-queue

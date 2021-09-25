@@ -1,0 +1,11 @@
+id,city,lat,lng,country,iso2,capital
+1,Berlin,52.5167,13.3833,Germany,DE,primary
+2,Hamburg,53.55,10,Germany,DE,admin
+3,Munich,48.1372,11.5755,Germany,DE,admin
+4,Cologne,50.9422,6.9578,Germany,DE,
+5,Frankfurt,50.1136,8.6797,Germany,DE,minor
+6,Bremen,53.1153,8.7975,Germany,DE,admin
+7,Düsseldorf,51.2311,6.7724,Germany,DE,admin
+8,Stuttgart,48.7761,9.1775,Germany,DE,admin
+9,Leipzig,51.3333,12.3833,Germany,DE,minor
+10,Dortmund,51.5139,7.4653,Germany,DE,minor
