@@ -1,0 +1,14 @@
+{
+  "name": "autocomplete-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "dev": "sls offline"
+  },
+  "author": "Sebastian Hesse",
+  "license": "MIT",
+  "devDependencies": {
+    "serverless-offline": "^8.2.0"
+  }
+}

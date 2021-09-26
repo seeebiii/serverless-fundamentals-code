@@ -24,3 +24,6 @@ functions:
       - httpApi:
           path: /autocomplete
           method: get
+
+plugins:
+  - serverless-offline
