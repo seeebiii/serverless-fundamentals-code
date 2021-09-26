@@ -22,6 +22,6 @@ module.exports.autocomplete = async (event) => {
 
   return {
     statusCode: 200,
-    body: JSON.stringify({ suggestions }, null, 2)
+    body: JSON.stringify({ suggestions })
   };
 };

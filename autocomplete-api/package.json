@@ -9,6 +9,10 @@
   "author": "Sebastian Hesse",
   "license": "MIT",
   "devDependencies": {
+    "jest": "^27.2.2",
     "serverless-offline": "^8.2.0"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.995.0"
   }
 }
